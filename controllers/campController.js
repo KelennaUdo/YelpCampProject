@@ -37,7 +37,7 @@ module.exports.edit = async (req, res)=>{
            const img = req.files.map(file => ({url: file.path, filename: file.filename}));
            campground.images.push(...img);
            await campground.save();  
-           if(req.body.deleteImg && req.body.deleteImg.length > 0){
+           if(req.body.deleteImg ){
             for (let file of req.body.deleteImg) {
               // Delete image file from Cloudinary
               await cloudinary.uploader.destroy(file);
