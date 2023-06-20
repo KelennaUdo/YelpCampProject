@@ -36,8 +36,10 @@ app.use(
       replaceWith: '_',
     }),
   );
-// configuring store for session data.
+//  process.env.SECRET is set automatically on the heroku server
 const secret = process.env.SECRET || 'thisshouldbeabettersecret!'
+
+// configuring store for session data.
   const store = MongoStore.create({
     mongoUrl: dbUrl,
     touchAfter: 24 * 60 * 60,
@@ -158,9 +160,8 @@ app.use((err, req, res, next)=>{
     // res.redirect('/campgrounds');
 })
 
-
-
-app.listen(3000, ()=>{
-    console.log('Listening on port 3000' );
+const port = process.env.PORT || 3000
+app.listen(port , ()=>{
+    console.log(`Listening on port ${port}` );
 })
 
