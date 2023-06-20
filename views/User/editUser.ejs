@@ -1,0 +1,40 @@
+<% layout('./layouts/boilerplate') %>
+<h1>Edit Profile</h1>
+<form action="/editprofile?_method=PUT" method="post" class="validated-form" novalidate>
+    <div class="mb-3">
+        <label class="form-label" for="username">Username</label>
+        <input class="form-control" type="text" id="username" name="username" value="<%=userProfile.username  %>" required>
+       </div>
+
+       <div class="mb-3">
+        <label class="form-label" for="email">Email</label>
+        <input class="form-control" type="email" id="email" name="email" value="<%=userProfile.email%>" required>
+       </div>
+
+       <!-- <div class="mb-3">
+        <label class="form-label" for="password">Password</label>
+        <input class="form-control" type="password" id="password" name="password" required>
+        <div class="valid-feedback">Valid!</div>
+       </div> -->
+     
+
+       <div class="mb-3">
+        <label class="form-label" for="revmsg">Review Response</label>
+        <input class="form-control" type="text" id="revmsg" name="reviewRes" value="<%=userProfile.reviewRes%>">
+       </div>
+       
+       <button class="btn btn-success">Update Profile</button>
+       <a class="btn btn-danger" href="/profile/<%=userProfile._id%>">Cancel</a>
+
+
+ 
+
+
+        <div class="card-body my-3">      
+        <a href="/campgrounds" class="text-decoration-none text-muted">Back to index</a>
+       </div> 
+</form>
+
+<form action="/editprofile?_method=DELETE" method="post">
+<button class="btn btn-sm btn-danger">delete</button>
+</form> 

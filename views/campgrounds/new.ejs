@@ -1,0 +1,46 @@
+<% layout('./layouts/boilerplate') %>
+<div class="row my-5">
+    <h1 class="text-center">New Campground</h1>
+    <div class="col-md-6 offset-md-3 ">
+        
+    <form action="/campgrounds" method="post" novalidate class="validated-form" enctype="multipart/form-data">
+        <div class="mb-3">
+         <label class="form-label" for="title">Title</label>
+         <input class="form-control" type="text" id="title" name="campground[title]" required>
+         <div class="valid-feedback">Valid!</div>
+        </div>
+ 
+         <div class="mb-3">
+         <label class="form-label" for="location">Location</label>
+         <input class="form-control" type="text" id="location" name="campground[location]" required>
+         <div class="valid-feedback">Valid!</div>
+         </div>
+      <div class="mb-3">
+        <label for="price">Price</label>
+        <div class="input-group ">
+            <span class="input-group-text" id="price-label">$</span>
+            <input type="number" name="campground[price]" class="form-control" aria-label="Amount (to the nearest dollar)" aria-describedby="price-label" id="price"
+            placeholder="0.00" required>           
+            <div class="valid-feedback">Valid!</div>
+    </div>
+      </div>
+        <div class="input-group mb-3 mt-5 custom-file">
+             <input type="file" class="form-control" id="inputGroupFile" name="images" multiple>
+              <label class="input-group-text custom-file-label" for="inputGroupFile"></label>
+          </div>
+        <div class="mb-3">
+         <label class="form-label" for="description">Description</label>
+         <textarea name="campground[description]" id="description" cols="30" rows="10" class="textarea form-control" required></textarea>
+         <div class="valid-feedback">Valid!</div>
+        </div>
+       <div class="mb-3">
+        <button class="btn btn-success ">Add Campground</button>
+       </div>
+       <div class="mb-3">
+        <a href="/campgrounds" class="btn btn-danger">Cancel</a>
+       </div>
+     </form>
+    </div>
+</div>
+    
+    

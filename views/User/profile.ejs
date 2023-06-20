@@ -1,0 +1,18 @@
+<% layout('./layouts/boilerplate') %>
+
+    <div class="col-6 offset-3">
+    <div class="card" >
+        <div class="card-body">
+            <h1><%= userProfile.username %></h1>       
+        </div>    
+        <ul class="list-group list-group-flush">
+           <li class="list-group-item">Contact: <a href="mailto:<%= userProfile.email %>"><%= userProfile.email %></a></li> 
+           <% if (isOwnProfile) { %>
+           <li class="list-group-item">Custom Review Response:<p><%= userProfile.reviewRes %></p></li>            
+           <li class="list-group-item"><a class="card-link btn btn-info" href="/editprofile/<%=userProfile._id %>">edit profile</a></li> 
+           <% } %>   
+           <div class="card-body">
+            <a href="/campgrounds" class="text-decoration-none text-muted">Back to index</a>
+           </div>        
+          </ul>
+          </div>
